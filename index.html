@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1 id="tituloCalculadora">Calculadora</h1>
+    <section class="secao1">
+        <h1 id="tituloPrimeiroNumero">Primeiro número:</h1>
+        <input type="number" id="inputPrimeiroNumero">
+
+        <h1 id="tituloSegundoNumero">Segundo número:</h1>
+        <input type="number" id="inputSegundoNumero">
+            <div id="operacoes">
+                <button type="button" onclick="somar()">Somar</button>
+                <button type="button" onclick="subtrair()">Subtrair</button>
+                <button type="button" onclick="dividir()">Dividir</button>
+                <button type="button" onclick="multiplicar()">Multiplicar</button>
+                <button type="button" onclick="limpar()">Limpar</button>
+                <button type="button" onclick="zerar()">Zerar</button>
+            </div>
+            
+            <p id="resultado"></p>
+       
+    </section>
+
+
+    <script src="/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.secao1 {
+    border: 5px solid black;
+    width: 300px;
+    height: 300px;
+}
+
+#tituloCalculadora {
+    position: relative;
+    left: 60px;
+    color: green;
+}
+
+#tituloPrimeiroNumero {
+    position: relative;
+    left: 10px;
+}
+
+
+#inputPrimeiroNumero {
+    position: relative;
+    left: 10px;
+
+}
+
+#tituloSegundoNumero {
+    position: relative;
+    left: 10px;
+}
+
+
+#inputSegundoNumero {
+    position: relative;
+    left: 10px;
+
+}
+
+#operacoes {
+    width: 150px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    line-height: 25px;
+}
+
+.secao2 {
+    border: 5px solid black;
+    width: 300px;
+    height: 300px;
+}
