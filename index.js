@@ -36,3 +36,11 @@ function zerar() {
     resultado.innerHTML = "O resultado da soma é: " + 0;
 
 };
+
+function inserir (numero)  {
+    var numero1 = document.getElementById('display').innerHTML
+    document.getElementById('display').innerHTML = numero1 + numero
+    
+    
+    
+}
