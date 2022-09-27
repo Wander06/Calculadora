@@ -38,9 +38,39 @@ function zerar() {
 };
 
 function inserir (numero)  {
-    var numero1 = document.getElementById('display').innerHTML
-    document.getElementById('display').innerHTML = numero1 + numero
+    var numero1 = document.getElementById('display').innerHTML;
+    document.getElementById('display').innerHTML = numero1 + numero;
     
+}
+
+function teste() {
+    var listaNumeros = [ 1, 2 ,3]
+
+    var listaOperacoes = [ '+', '-']
+
+    var resultadoNumeros = [3,3]
+    var resultadoOperacoes = ['-']
+
+    var primeiroNumero = listaNumeros[0];
+    var segundoNumero = listaNumeros[1];
+    var primeiroOperacao = listaOperacoes[0];
+    var resultado ;
     
+    if(primeiroOperacao == '+') {
+        resultado = primeiroNumero + segundoNumero;
+    }
+
+
     
+
+     
+    if(listaNumeros[0] == resultadoNumeros[0] && 
+        listaNumeros[1] == resultadoNumeros[1] &&
+        listaOperacoes[0] == resultadoOperacoes[0] ) {
+            console.log('passou')
+    }
+    else{
+        console.error('nao passou')
+    }
+
 }
