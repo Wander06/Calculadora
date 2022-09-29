@@ -43,34 +43,21 @@ function inserir (numero)  {
     
 }
 
-function teste() {
-    var listaNumeros = [ 1, 2 ,3]
-
-    var listaOperacoes = [ '+', '-']
-
-    var resultadoNumeros = [3,3]
-    var resultadoOperacoes = ['-']
-
+function aplicaOperacoes (listaOperacoes, listaNumeros) {
     var primeiroNumero = listaNumeros[0];
     var segundoNumero = listaNumeros[1];
+    var terceiroNumero = listaNumeros[2];
     var primeiroOperacao = listaOperacoes[0];
-    var resultado ;
+    var segundaOperacao = listaOperacoes[1];
+    var primeiroResultado ;
+    var resultadoFinal ;
     
-    if(primeiroOperacao == '+') {
-        resultado = primeiroNumero + segundoNumero;
+    if(primeiroOperacao == '+' ) {
+        primeiroResultado = primeiroNumero + segundoNumero;
+    }
+    if(segundaOperacao == '-') {
+        resultadoFinal = primeiroResultado - terceiroNumero;
     }
 
-
-    
-
-     
-    if(listaNumeros[0] == resultadoNumeros[0] && 
-        listaNumeros[1] == resultadoNumeros[1] &&
-        listaOperacoes[0] == resultadoOperacoes[0] ) {
-            console.log('passou')
-    }
-    else{
-        console.error('nao passou')
-    }
-
+    return resultadoFinal;
 }
