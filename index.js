@@ -47,9 +47,14 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
     var primeiroNumero = listaNumeros[0];
     var segundoNumero = listaNumeros[1];
     var terceiroNumero = listaNumeros[2];
+    var quartoNumero = listaNumeros[3];
+    var quintoNumero = listaNumeros[4];
     var primeiroOperacao = listaOperacoes[0];
     var segundaOperacao = listaOperacoes[1];
+    var terceiraOperacao = listaOperacoes[2];
+    var quartaOperacao = listaOperacoes[3];
     var primeiroResultado ;
+    var segundaResultado ;
     var resultadoFinal ;
     
     if(primeiroOperacao == '+' ) {
@@ -58,6 +63,14 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
     if(segundaOperacao == '-') {
         resultadoFinal = primeiroResultado - terceiroNumero;
     }
+    if(terceiraOperacao && terceiraOperacao == '+') {
+        resultadoFinal = resultadoFinal + quartoNumero;
+    }
+    if(quartaOperacao && quartaOperacao == '-') {
+         resultadoFinal = resultadoFinal - quintoNumero
+    }
+    
+
 
     return resultadoFinal;
 }
