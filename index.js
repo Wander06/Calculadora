@@ -37,6 +37,8 @@ function zerar() {
 
 };
 
+//Nova calculadora
+
 function inserir (numero)  {
     var numero1 = document.getElementById('display').innerHTML;
     document.getElementById('display').innerHTML = numero1 + numero;
@@ -54,7 +56,6 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
     var terceiraOperacao = listaOperacoes[2];
     var quartaOperacao = listaOperacoes[3];
     var primeiroResultado ;
-    var segundaResultado ;
     var resultadoFinal ;
     
     if(primeiroOperacao == '+' ) {
@@ -69,7 +70,6 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
     if(quartaOperacao && quartaOperacao == '-') {
          resultadoFinal = resultadoFinal - quintoNumero
     }
-    
 
 
     return resultadoFinal;
