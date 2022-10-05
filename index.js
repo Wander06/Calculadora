@@ -63,8 +63,14 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
             if(operacao == '-') {
                 resultadoFinal = resultadoFinal - proximoNumero;
             }
-    }
+            if(operacao == '*') {
+                resultadoFinal = resultadoFinal * proximoNumero;
+            }
+            if(operacao == '/') {
+                resultadoFinal = resultadoFinal / proximoNumero;
+            }
 
+    }
 
     return resultadoFinal;
 }

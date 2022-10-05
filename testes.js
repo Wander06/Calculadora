@@ -7,10 +7,10 @@ function testeDeveAplicarDuasOperacoes() {
     var resultado = aplicaOperacoes(listaOperacoes,listaNumeros)
     
     if(resultadoEsperado == resultado ) {
-            console.log('passou')
+            console.log('testeDeveAplicarDuasOperacoes passou')
     }
     else{
-        console.error('nao passou')
+        console.error('testeDeveAplicarDuasOperacoes nao passou')
     }
     console.log(resultado)
 }
@@ -23,10 +23,10 @@ function testeDeveAplicarTresOperacoes() {
     var resultado = aplicaOperacoes(listaOperacoes,listaNumeros);
 
     if(resultadoEsperado == resultado ) {
-        console.log('passou')
+        console.log('testeDeveAplicarTresOperacoes passou')
 }
 else{
-    console.error('nao passou')
+    console.error('testeDeveAplicarTresOperacoes nao passou')
 }
     console.log(resultado)
 };
@@ -40,10 +40,10 @@ function testeDeveAplicarQuatroOperacoes () {
     var resultado = aplicaOperacoes(listaOperacoes,listaNumeros);
 
     if(resultadoEsperado == resultado ) {
-        console.log('passou')
+        console.log('testeDeveAplicarQuatroOperacoes passou')
 }
 else{
-    console.error('nao passou')
+    console.error('testeDeveAplicarQuatroOperacoes nao passou')
 }
     console.log(resultado)
 };
@@ -57,13 +57,36 @@ function testeAplicaNOperacoes(){
     var resultado = aplicaOperacoes(listaOperacoes, listaNumeros)
     
     if(resultadoEsperado == resultado ) {
-        console.log('passou')
+        console.log('testeAplicaNOperacoes passou')
     }
     else{
-    console.error('nao passou')
+    console.error('testeAplicaNOperacoes nao passou')
     }
     console.log(resultado)
 };
 
+function testeAplicaNovasOperacoes() {
+    var listaOperacoes = ['+', '-', '*', '/'];
 
+    var listaNumeros = [5, 3, 3, 4, 5];
+
+    var resultadoEsperado = 4;
+    var resultado = aplicaOperacoes(listaOperacoes, listaNumeros)
+    
+    if(resultadoEsperado == resultado ) {
+        console.log('testeAplicaNovasOperacoes passou')
+    }
+    else{
+    console.error('testeAplicaNovasOperacoes nao passou')
+    }
+    console.log(resultado)
+}
+
+function todosOsTestes() {
+    testeDeveAplicarDuasOperacoes()
+    testeDeveAplicarTresOperacoes()
+    testeDeveAplicarQuatroOperacoes()
+    testeAplicaNOperacoes()
+    testeAplicaNovasOperacoes()
+}
 
