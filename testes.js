@@ -1,7 +1,7 @@
 function testeDeveAplicarDuasOperacoes() {
     var listaNumeros = [ 1, 2 ,3]
 
-    var listaOperacoes = [ '+', '-',]
+    var listaOperacoes = [ '+', '-']
 
     var resultadoEsperado = 0;
     var resultado = aplicaOperacoes(listaOperacoes,listaNumeros)
@@ -12,7 +12,7 @@ function testeDeveAplicarDuasOperacoes() {
     else{
         console.error('nao passou')
     }
-
+    console.log(resultado)
 }
 function testeDeveAplicarTresOperacoes() {
     var listaNumeros = [ 1, 2 ,3, 1]
@@ -28,6 +28,7 @@ function testeDeveAplicarTresOperacoes() {
 else{
     console.error('nao passou')
 }
+    console.log(resultado)
 };
 
 function testeDeveAplicarQuatroOperacoes () {
@@ -44,39 +45,25 @@ function testeDeveAplicarQuatroOperacoes () {
 else{
     console.error('nao passou')
 }
+    console.log(resultado)
 };
 
 function testeAplicaNOperacoes(){
-    var listaOperacoes = ['+', '-','+','-','+'];
+    var listaOperacoes = ['+', '-', '+','-', '+'];
+
     var listaNumeros = [1, 2, 3, 4, 5, 6];
-    var resultadoFinal;
-    var proximoNumero;
-    var operacao;
 
-    if(resultadoFinal == undefined) {
-        resultadoFinal = listaNumeros[0]
+    var resultadoEsperado = 5;
+    var resultado = aplicaOperacoes(listaOperacoes, listaNumeros)
+    
+    if(resultadoEsperado == resultado ) {
+        console.log('passou')
     }
-
-    for(i=0; i< listaOperacoes['length']; i++) {    
-        proximoNumero = listaNumeros[i+1]  
-        operacao = listaOperacoes[i]
-        //resultadoFinal = resultadoFinal + operacao + proximoNumero 
-        // console.log(proximo)
-        // console.log(operacao)
-        //console.log(resultadoFinal)
-
-            if(operacao == '+') {
-                resultadoFinal = resultadoFinal + proximoNumero
-                console.log('O resultado da soma é: '+resultadoFinal)
-            }
-            if(operacao == '-') {
-                resultadoFinal = resultadoFinal - proximoNumero
-                console.log('O resultado subtração é: ' + resultadoFinal)
-            }
-        
+    else{
+    console.error('nao passou')
     }
+    console.log(resultado)
+};
 
-    return resultadoFinal;
 
-}
 
