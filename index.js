@@ -1,44 +1,6 @@
-var primeiroNumero = document.getElementById("inputPrimeiroNumero");
-var segundoNumero = document.getElementById("inputSegundoNumero");
-var resultado = document.getElementById("resultado");
-
-
-function somar() {
-    var resultadoDaOperacao = Number(primeiroNumero.value) + Number(segundoNumero.value);
-    resultado.innerHTML = "O resultado da soma é: " + resultadoDaOperacao;
-    
-};
-
-function subtrair() {
-    var resultadoDaOperacao = Number(primeiroNumero.value) - Number(segundoNumero.value);
-    resultado.innerHTML = "O resultado da subtração é: " + resultadoDaOperacao
-};
-
-function multiplicar() {
-    var resultadoDaOperacao = Number(primeiroNumero.value) * Number(segundoNumero.value);
-    resultado.innerHTML = "O resultado da multiplicação é: " + resultadoDaOperacao;
-};
-
-function dividir() {
-    var resultadoDaOperacao = Number(primeiroNumero.value) / Number(segundoNumero.value);
-    resultado.innerHTML = "O resultado da divisão é: " + resultadoDaOperacao;
-};
-
-function limpar () {
-    primeiroNumero.value = " ";
-    segundoNumero.value = " ";
-    resultado.innerHTML = " ";
-};
-
-function zerar() {
-    primeiroNumero.value = 0;
-    segundoNumero.value = 0;
-    resultado.innerHTML = "O resultado da soma é: " + 0;
-
-};
-
 //Nova calculadora
 
+var historico = []
 var listaNumeros = []
 var listaOperacoes = []
 var numeroCorrente = '';
@@ -48,9 +10,20 @@ function atualizaNumeroCorrente(numeroStr) {
 
 }
 
+function alteraFonte(texto) {
+    if(document.getElementById('display').innerHTML.length == 27){
+        document.getElementById('display').style.fontSize = '25px'
+    }
+    if(document.getElementById('display').innerHTML.length < 27){
+        document.getElementById('display').style.fontSize = '35px'
+    }
+}
+
 function atualizaDisplay(texto){
     var textoDoDisplay = document.getElementById('display').innerHTML;
     document.getElementById('display').innerHTML = textoDoDisplay + texto;
+
+    alteraFonte()
 }
 
 function converteNumeroCorrente() {
@@ -96,11 +69,20 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
             if(operacao == '-') {
                 resultadoFinal = resultadoFinal - proximoNumero;
             }
-            if(operacao == '*') {
+            if(operacao == 'x') {
                 resultadoFinal = resultadoFinal * proximoNumero;
             }
-            if(operacao == '/') {
+            if(operacao == '÷') {
                 resultadoFinal = resultadoFinal / proximoNumero;
+            }
+            if(operacao == 'ˆ') {
+                resultadoFinal = Math.pow(resultadoFinal, proximoNumero);
+            }
+            if(operacao == '√') {
+                resultadoFinal = Math.sqrt(resultadoFinal);
+            }
+            if(operacao == '%') {
+                resultadoFinal = (resultadoFinal * 100) / resultadoFinal;
             }
 
     }
@@ -111,9 +93,31 @@ function calcula() {
     var resultado = aplicaOperacoes(listaOperacoes,listaNumeros);
     document.getElementById('display').innerHTML = resultado;
 
+    historico.push(resultado)
+
     numeroCorrente = resultado;
     listaNumeros = [];
     listaOperacoes = [];
 };
+
+
+function limpar() {
+    document.getElementById('display').innerHTML = "";
+    resultadoFinal = '';
+    proximoNumero = '';
+    listaOperacoes = [];
+    listaNumeros = [];
+    numeroCorrente = '';
+}
+
+function salvarNoHistorico(result) {
+    historico.push(result)
+    document.getElementById('historico').innerHTML = historico;
+}
+
+function limparHistorico() {
+    historico = [];
+    document.getElementById('historico').innerHTML = '';
+}
 
 

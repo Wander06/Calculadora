@@ -1,52 +1,30 @@
+body {
+    background-image: url(/img/foto_calc3.png)
+}
+
 .secao1 {
-    border: 5px solid black;
-    width: 300px;
-    height: 300px;
-}
-
-#tituloCalculadora {
-    position: relative;
-    left: 60px;
-    color: green;
-}
-
-#tituloPrimeiroNumero {
-    position: relative;
-    left: 10px;
-}
-
-
-#inputPrimeiroNumero {
-    position: relative;
-    left: 10px;
-
-}
-
-#tituloSegundoNumero {
-    position: relative;
-    left: 10px;
-}
-
-
-#inputSegundoNumero {
-    position: relative;
-    left: 10px;
-
-}
-
-#operacoes {
-    width: 150px;
-    position: relative;
-    top: 10px;
-    left: 10px;
-    line-height: 25px;
-}
-
-.secao2 {
     width: 100%;
-    height: 700px;
-    background-color: bisque;
+    height: 630px;
  }
+
+#divHistorico {
+    height: auto;
+    width: 200px;
+    position: absolute;
+    left: 100px;
+    border: 5px black solid;
+    font-size: 40px;
+    color: white;
+}
+
+.botaoHistorico {
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    border: 2px white solid;
+}
 
  #layoutCalculadora {
     border: 5px solid black;
@@ -54,7 +32,7 @@
     width: 300px;
     position: relative;
     left: 450px;
-    background-color: rgb(169, 169, 169);
+    background-color: rgb(0, 0, 0);
     border-radius: 20px;
     
  }
@@ -62,18 +40,48 @@
  #display {
     height: 80px;
     width: 230px;
-    background-color: green;
+    background-color:  rgb(13, 88, 63);
     position: relative;
     left: 25px;
     top: 20px;
-    font-size: 40px;
+    font-size: 35px;
     text-align: right;
     padding-right: 20px;
-    border: 2px black solid;
+    border: 2px white solid;
+    word-wrap: break-word;
+    color: aliceblue;
  }
 
  .botao {
     width: 60px;
     height: 60px;
- }
+    position: relative;
+    left: 20px; 
+    font-size: 25px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    border: 0px solid;
+}
+
+.botoesOperacoes {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    left: 20px; 
+    font-size: 25px;
+    background-color: rgb(13, 88, 63);
+    color: white;
+    border: 0px solid;
+}
+
+#botaoClear{
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    left: 20px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: 0px solid;
+}
  
