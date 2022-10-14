@@ -110,6 +110,10 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
 function calcula() {
     var resultado = aplicaOperacoes(listaOperacoes,listaNumeros);
     document.getElementById('display').innerHTML = resultado;
+
+    numeroCorrente = resultado;
+    listaNumeros = [];
+    listaOperacoes = [];
 };
 
 
