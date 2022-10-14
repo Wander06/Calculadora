@@ -89,4 +89,3 @@ function todosOsTestes() {
     testeAplicaNOperacoes()
     testeAplicaNovasOperacoes()
 }
-

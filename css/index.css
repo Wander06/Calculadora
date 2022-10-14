@@ -55,6 +55,7 @@
     position: relative;
     left: 450px;
     background-color: rgb(169, 169, 169);
+    border-radius: 20px;
     
  }
 
@@ -69,7 +70,10 @@
     text-align: right;
     padding-right: 20px;
     border: 2px black solid;
-    
-    
+ }
+
+ .botao {
+    width: 60px;
+    height: 60px;
  }
  

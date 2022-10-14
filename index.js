@@ -39,13 +39,45 @@ function zerar() {
 
 //Nova calculadora
 
-function inserir (numero)  {
-    var numero1 = document.getElementById('display').innerHTML;
-    document.getElementById('display').innerHTML = numero1 + numero;
-    
+var listaNumeros = []
+var listaOperacoes = []
+var numeroCorrente = '';
+
+function atualizaNumeroCorrente(numeroStr) {
+    numeroCorrente = numeroCorrente + numeroStr;
+
+}
+
+function atualizaDisplay(texto){
+    var textoDoDisplay = document.getElementById('display').innerHTML;
+    document.getElementById('display').innerHTML = textoDoDisplay + texto;
+}
+
+function converteNumeroCorrente() {
+    var numeroDisplay = Number(numeroCorrente);
+    numeroCorrente = '';
+    listaNumeros.push(numeroDisplay);
+}
+
+function inserirNumeros(numero)  {
+    atualizaDisplay(numero);
+
+    atualizaNumeroCorrente(numero);
+    console.log(numero)
+}
+
+function inserirOperacoes (operacao) {
+    atualizaDisplay(operacao);
+    converteNumeroCorrente();
+
+    listaOperacoes.push(operacao)
+    console.log(operacao)
 }
 
 function aplicaOperacoes (listaOperacoes, listaNumeros) {
+    converteNumeroCorrente();
+    console.log(listaOperacoes);
+    console.log(listaNumeros);
     var resultadoFinal ;
     var proximoNumero;
     var operacao;
@@ -57,6 +89,7 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
     for(i=0; i< listaOperacoes['length']; i++) {    
         proximoNumero = listaNumeros[i+1]; 
         operacao = listaOperacoes[i];
+        //console.log(proximoNumero)
             if(operacao == '+') {
                 resultadoFinal = resultadoFinal + proximoNumero;
             }
@@ -71,6 +104,12 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
             }
 
     }
-
     return resultadoFinal;
 }
+
+function calcula() {
+    var resultado = aplicaOperacoes(listaOperacoes,listaNumeros);
+    document.getElementById('display').innerHTML = resultado;
+};
+
+
