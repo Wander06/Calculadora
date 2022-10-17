@@ -119,5 +119,9 @@ function limparHistorico() {
     historico = [];
     document.getElementById('historico').innerHTML = '';
 }
+function limparResultado(resultado) {
+    document.getElementById('display').innerHTML = "";
+    document.getElementById('display').innerHTML = resultado
+}
 
 
