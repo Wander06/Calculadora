@@ -10,7 +10,7 @@ function atualizaNumeroCorrente(numeroStr) {
 
 }
 
-function alteraFonte(texto) {
+function alteraFonte() {
     if(document.getElementById('display').innerHTML.length == 27){
         document.getElementById('display').style.fontSize = '25px'
     }
