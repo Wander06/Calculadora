@@ -36,7 +36,7 @@ function inserirNumeros(numero)  {
     atualizaDisplay(numero);
 
     atualizaNumeroCorrente(numero);
-    console.log(numero)
+    (numero)
 }
 
 function inserirOperacoes (operacao) {
@@ -44,13 +44,13 @@ function inserirOperacoes (operacao) {
     converteNumeroCorrente();
 
     listaOperacoes.push(operacao)
-    console.log(operacao)
+    (operacao)
 }
 
 function aplicaOperacoes (listaOperacoes, listaNumeros) {
     converteNumeroCorrente();
-    console.log(listaOperacoes);
-    console.log(listaNumeros);
+    (listaOperacoes);
+    (listaNumeros);
     var resultadoFinal ;
     var proximoNumero;
     var operacao;
@@ -62,7 +62,6 @@ function aplicaOperacoes (listaOperacoes, listaNumeros) {
     for(i=0; i< listaOperacoes['length']; i++) {    
         proximoNumero = listaNumeros[i+1]; 
         operacao = listaOperacoes[i];
-        //console.log(proximoNumero)
             if(operacao == '+') {
                 resultadoFinal = resultadoFinal + proximoNumero;
             }
@@ -124,4 +123,5 @@ function limparResultado(resultado) {
     document.getElementById('display').innerHTML = resultado
 }
 
+module.exports = {aplicaOperacoes}
 

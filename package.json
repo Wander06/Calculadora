@@ -1,0 +1,25 @@
+{
+  "name": "calculadora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wander06/Calculadora.git"
+  },
+  "author": "Wander06",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wander06/Calculadora/issues"
+  },
+  "homepage": "https://github.com/Wander06/Calculadora#readme",
+  "devDependencies": {
+    "@testing-library/dom": "^8.19.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "jest": "^29.2.2",
+    "jest-environment-jsdom": "^29.2.2"
+  }
+}
