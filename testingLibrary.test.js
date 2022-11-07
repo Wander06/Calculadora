@@ -7,9 +7,17 @@
 const testingLibraryDom = require("@testing-library/dom");
 const { getByLabelText, getByText, getByTestId, queryByTestId, waitFor} = testingLibraryDom;
 require("@testing-library/jest-dom");
+var fs = require('fs');
 
 
   function getExampleDOM() {
+    fs.readFile('index.html', 'utf8', function(err, data) {
+      if (err) {
+          return console.log(err);
+      }
+      console.log(data);
+  });
+                      
     // This is just a raw example of setting up some DOM
     // that we can interact with. Swap this with your UI
     // framework of choice 😉
