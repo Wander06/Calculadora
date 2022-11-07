@@ -6,9 +6,8 @@
 // var assert = require('node:assert');
 const testingLibraryDom = require("@testing-library/dom");
 const { getByLabelText, getByText, getByTestId, queryByTestId, waitFor} = testingLibraryDom;
-const jestDom = require("@testing-library/jest-dom");
+require("@testing-library/jest-dom");
 
-console.log(testingLibraryDom)
 
   function getExampleDOM() {
     // This is just a raw example of setting up some DOM
@@ -48,15 +47,15 @@ console.log(testingLibraryDom)
     // Get elements by their text, just like a real user does.
     getByText(container, 'Print Username').click()
   
-    // await waitFor(() =>
-    //   jestDom.expect (queryByTestId(container, 'printed-username')).toBeTruthy(),
-    // )
+     await waitFor(() =>
+    expect (queryByTestId(container, 'printed-username')).toBeTruthy(),
+     )
   
     // // getByTestId and queryByTestId are an escape hatch to get elements
     // // by a test id (could also attempt to get this element by its text)
-    // jestDom.expect (getByTestId(container, 'printed-username')).toHaveTextContent(
-    // famousProgrammerInHistory,
-    // )
+    expect (getByTestId(container, 'printed-username')).toHaveTextContent(
+    famousProgrammerInHistory,
+    )
     // //jest snapshots work great with regular DOM nodes!
-    // jestDom.expect (container).toMatchSnapshot()
+     expect (container).toMatchSnapshot()
   })
