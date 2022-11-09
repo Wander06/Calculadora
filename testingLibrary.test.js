@@ -5,65 +5,29 @@
 // query utilities:
 // var assert = require('node:assert');
 const testingLibraryDom = require("@testing-library/dom");
-const { getByLabelText, getByText, getByTestId, queryByTestId, waitFor} = testingLibraryDom;
+const { getByLabelText, getByText, getByTestId, queryByTestId, waitFor, screen, fireEvent } = testingLibraryDom;
 require("@testing-library/jest-dom");
-var fs = require('fs');
+const { readFileSync } = require('node:fs');
 
 
   function getExampleDOM() {
-    fs.readFile('index.html', 'utf8', function(err, data) {
-      if (err) {
-          return console.log(err);
-      }
-      console.log(data);
-  });
+    var data = readFileSync('index.html', 'utf8');
+    //console.log(data)
                       
     // This is just a raw example of setting up some DOM
     // that we can interact with. Swap this with your UI
     // framework of choice 😉
     const div = document.createElement('div');
-    div.innerHTML = `
-      <label for="username">Username</label>
-      <input id="username" />
-      <button>Print Username</button>
-    `
-    const button = div.querySelector('button')
-    const input = div.querySelector('input')
-    button.addEventListener('click', () => {
-      // let's pretend this is making a server request, so it's async
-      // (you'd want to mock this imaginary request in your unit tests)...
-      setTimeout(() => {
-        const printedUsernameContainer = document.createElement('div')
-        printedUsernameContainer.innerHTML = `
-          <div data-testid="printed-username">${input.value}</div>
-        `
-        div.appendChild(printedUsernameContainer)
-      }, Math.floor(Math.random() * 200))
-    })
+    div.innerHTML = data;
     return div
   }
   
   test('examples of some things', async () => {
-    const famousProgrammerInHistory = 'Ada Lovelace'
     const container = getExampleDOM()
-  
-    // Get form elements by their label text.
-    // An error will be thrown if one cannot be found (accessibility FTW!)
-    const input = getByLabelText(container, 'Username')
-    input.value = famousProgrammerInHistory
-  
-    // Get elements by their text, just like a real user does.
-    getByText(container, 'Print Username').click()
-  
-     await waitFor(() =>
-    expect (queryByTestId(container, 'printed-username')).toBeTruthy(),
-     )
-  
-    // // getByTestId and queryByTestId are an escape hatch to get elements
-    // // by a test id (could also attempt to get this element by its text)
-    expect (getByTestId(container, 'printed-username')).toHaveTextContent(
-    famousProgrammerInHistory,
+    var teclaUm = getByText(container, '1')
+    var display = getByTestId(container, 'display')
+    fireEvent.click(teclaUm);
+    await waitFor(() =>
+      expect(display).toHaveTextContent('1')
     )
-    // //jest snapshots work great with regular DOM nodes!
-     expect (container).toMatchSnapshot()
   })
