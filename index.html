@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Calculadora</title>
 </head>
 <body>
     <section class="secao1">
-        <div id="divHistorico" data-testid="display">
+        <div id="divHistorico">
             <button type="button" onclick="salvarNoHistorico()" class="botaoHistorico">Histórico</button>
             <button type="button" onclick="limparHistorico()" class="botaoHistorico">Limpar Histórico</button>
             <p id="historico"></p>
         </div>
 
             <div id="layoutCalculadora">
-                <p id="display"></p>
+                <p id="display" data-testid="display"></p>
                     <div id="divBotoes">
                         <table>
                             <tr>
@@ -55,6 +55,5 @@
     </section>
 
     <script src="./index.js"></script>
-    <script src="./testes.js"></script>
 </body>
 </html>
